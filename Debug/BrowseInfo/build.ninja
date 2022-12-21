@@ -1,0 +1,120 @@
+##IAR Ninja build file
+
+
+#Rules
+rule COMPILER_XCL
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\XclFileGenerator.exe" $xclcommand -f "$rspfile_name"
+  description = IAR_NEW_TOOL+++COMPILER_XCL+++$in+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\XclFileGenerator.exe" $flags
+  rspfile = $rspfile_name
+  rspfile_content = $flags
+
+rule INDEXER
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\SourceIndexer.exe" $flags
+  depfile = $out.dep
+  description = IAR_NEW_TOOL+++INDEXER+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\SourceIndexer.exe" $flags
+
+rule MAKEBROWSE
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\makeBrowseData.exe" $flags
+  description = IAR_NEW_TOOL+++MAKEBROWSE+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\makeBrowseData.exe" $flags
+
+rule PDBLINK
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\PbdLink.exe" $flags
+  description = IAR_NEW_TOOL+++PDBLINK+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\PbdLink.exe" $flags
+
+
+
+#Build steps
+build C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\calculator.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\calculator.c" -xcl_file "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\calculator.xcl" -macro_file "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\calculator.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\calculator.c" -D ewarmPART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I C$:\ti\TivaWare_C_Series-2.2.0.295\ -Ol --predef_macros "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\calculator.tmp"
+  rspfile_name = C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\calculator.xcl.rsp
+
+build C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\Delay.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Delay.c" -xcl_file "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\Delay.xcl" -macro_file "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\Delay.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Delay.c" -D ewarmPART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I C$:\ti\TivaWare_C_Series-2.2.0.295\ -Ol --predef_macros "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\Delay.tmp"
+  rspfile_name = C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\Delay.xcl.rsp
+
+build C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\DIO.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\DIO.c" -xcl_file "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\DIO.xcl" -macro_file "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\DIO.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\DIO.c" -D ewarmPART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I C$:\ti\TivaWare_C_Series-2.2.0.295\ -Ol --predef_macros "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\DIO.tmp"
+  rspfile_name = C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\DIO.xcl.rsp
+
+build C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\KeyPad.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\KeyPad.c" -xcl_file "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\KeyPad.xcl" -macro_file "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\KeyPad.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\KeyPad.c" -D ewarmPART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I C$:\ti\TivaWare_C_Series-2.2.0.295\ -Ol --predef_macros "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\KeyPad.tmp"
+  rspfile_name = C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\KeyPad.xcl.rsp
+
+build C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\LCD.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\LCD.c" -xcl_file "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\LCD.xcl" -macro_file "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\LCD.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\LCD.c" -D ewarmPART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I C$:\ti\TivaWare_C_Series-2.2.0.295\ -Ol --predef_macros "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\LCD.tmp"
+  rspfile_name = C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\LCD.xcl.rsp
+
+build C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\main.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\main.c" -xcl_file "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\main.xcl" -macro_file "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\main.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\main.c" -D ewarmPART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I C$:\ti\TivaWare_C_Series-2.2.0.295\ -Ol --predef_macros "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\main.tmp"
+  rspfile_name = C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\main.xcl.rsp
+
+build C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\operations.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\operations.c" -xcl_file "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\operations.xcl" -macro_file "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\operations.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\operations.c" -D ewarmPART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I C$:\ti\TivaWare_C_Series-2.2.0.295\ -Ol --predef_macros "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\operations.tmp"
+  rspfile_name = C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\operations.xcl.rsp
+
+build C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\startup_ewarm.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\startup_ewarm.c" -xcl_file "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\startup_ewarm.xcl" -macro_file "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\startup_ewarm.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\startup_ewarm.c" -D ewarmPART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I C$:\ti\TivaWare_C_Series-2.2.0.295\ -Ol --predef_macros "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\startup_ewarm.tmp"
+  rspfile_name = C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\startup_ewarm.xcl.rsp
+
+build C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\calculator.pbi : INDEXER C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\calculator.xcl |  $
+C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\calculator.c
+  flags = "-out=C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\calculator.pbi" -f "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\calculator.xcl"
+
+build C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\Delay.pbi : INDEXER C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\Delay.xcl |  $
+C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Delay.c
+  flags = "-out=C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\Delay.pbi" -f "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\Delay.xcl"
+
+build C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\DIO.pbi : INDEXER C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\DIO.xcl |  $
+C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\DIO.c
+  flags = "-out=C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\DIO.pbi" -f "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\DIO.xcl"
+
+build C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\KeyPad.pbi : INDEXER C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\KeyPad.xcl |  $
+C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\KeyPad.c
+  flags = "-out=C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\KeyPad.pbi" -f "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\KeyPad.xcl"
+
+build C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\LCD.pbi : INDEXER C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\LCD.xcl |  $
+C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\LCD.c
+  flags = "-out=C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\LCD.pbi" -f "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\LCD.xcl"
+
+build C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\main.pbi : INDEXER C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\main.xcl |  $
+C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\main.c
+  flags = "-out=C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\main.pbi" -f "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\main.xcl"
+
+build C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\operations.pbi : INDEXER C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\operations.xcl |  $
+C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\operations.c
+  flags = "-out=C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\operations.pbi" -f "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\operations.xcl"
+
+build C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\startup_ewarm.pbi : INDEXER C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\startup_ewarm.xcl |  $
+C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\startup_ewarm.c
+  flags = "-out=C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\startup_ewarm.pbi" -f "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\startup_ewarm.xcl"
+
+build C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\calc.pbw : MAKEBROWSE C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\calc.pbd
+  flags = "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\calc.pbd" -output "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\calc.pbw"
+
+build C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\calc_part0.pbi : PDBLINK C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\calculator.pbi |  $
+C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\Delay.pbi $
+C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\DIO.pbi
+  flags = -M "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\calc_part0.pbi" "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\calculator.pbi" "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\Delay.pbi" "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\DIO.pbi"
+
+build C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\calc_part1.pbi : PDBLINK C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\KeyPad.pbi |  $
+C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\LCD.pbi $
+C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\main.pbi
+  flags = -M "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\calc_part1.pbi" "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\KeyPad.pbi" "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\LCD.pbi" "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\main.pbi"
+
+build C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\calc_part2.pbi : PDBLINK C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\operations.pbi |  $
+C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\startup_ewarm.pbi
+  flags = -M "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\calc_part2.pbi" "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\operations.pbi" "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\startup_ewarm.pbi"
+
+build C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\calc.pbd : PDBLINK C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\calc_part0.pbi |  $
+C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\calc_part1.pbi $
+C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\calc_part2.pbi
+  flags = -M "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\calc.pbd" "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\calc_part0.pbi" "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\calc_part1.pbi" "C$:\University\Senior$ 1\First$ term\Introduction$ to$ embedded$ systems\Project\Debug\BrowseInfo\calc_part2.pbi"
+
