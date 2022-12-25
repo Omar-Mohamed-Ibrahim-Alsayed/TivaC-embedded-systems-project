@@ -45,6 +45,8 @@ static void FaultISR(void);
 static void IntDefaultHandler(void);
 void handler(void);
 void handler2(void);
+void change_mode(void);
+void toggle_pause(void);
 
 
 //*****************************************************************************
@@ -100,11 +102,11 @@ __root const uVectorEntry __vector_table[] @ ".intvec" =
     0,                                      // Reserved
     IntDefaultHandler,                      // The PendSV handler
     IntDefaultHandler,                      // The SysTick handler
-    IntDefaultHandler,                      // GPIO Port A
+    change_mode,                      // GPIO Port A
     IntDefaultHandler,                      // GPIO Port B
     IntDefaultHandler,                      // GPIO Port C
     IntDefaultHandler,                      // GPIO Port D
-    IntDefaultHandler,                      // GPIO Port E
+    toggle_pause,                      // GPIO Port E
     IntDefaultHandler,                      // UART0 Rx and Tx
     IntDefaultHandler,                      // UART1 Rx and Tx
     IntDefaultHandler,                      // SSI0 Rx and Tx

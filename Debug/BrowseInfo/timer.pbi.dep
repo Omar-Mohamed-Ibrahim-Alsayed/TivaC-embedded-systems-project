@@ -1,5 +1,5 @@
-C:\University\Senior\ 1\First\ term\Introduction\ to\ embedded\ systems\Project\Debug\BrowseInfo\main.pbi: \
-  C:\University\Senior\ 1\First\ term\Introduction\ to\ embedded\ systems\Project\main.c \
+C:\University\Senior\ 1\First\ term\Introduction\ to\ embedded\ systems\Project\Debug\BrowseInfo\timer.pbi: \
+  C:\University\Senior\ 1\First\ term\Introduction\ to\ embedded\ systems\Project\timer.c \
   C:\University\Senior\ 1\First\ term\Introduction\ to\ embedded\ systems\Project\operations.h \
   C:\University\Senior\ 1\First\ term\Introduction\ to\ embedded\ systems\Project\DataTypes.h \
   C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\arm\inc\c\stdint.h \
@@ -30,8 +30,4 @@ C:\University\Senior\ 1\First\ term\Introduction\ to\ embedded\ systems\Project\
   C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\arm\inc\c\DLib_Product_stdlib.h \
   C:\University\Senior\ 1\First\ term\Introduction\ to\ embedded\ systems\Project\dmc1610a.h \
   C:\University\Senior\ 1\First\ term\Introduction\ to\ embedded\ systems\Project\delay.h \
-  C:\University\Senior\ 1\First\ term\Introduction\ to\ embedded\ systems\Project\KeyPad.h \
-  C:\University\Senior\ 1\First\ term\Introduction\ to\ embedded\ systems\Project\calculator.h \
-  C:\University\Senior\ 1\First\ term\Introduction\ to\ embedded\ systems\Project\stopwatch.h \
-  C:\University\Senior\ 1\First\ term\Introduction\ to\ embedded\ systems\Project\timer.h \
-  C:\University\Senior\ 1\First\ term\Introduction\ to\ embedded\ systems\Project\config.h
+  C:\University\Senior\ 1\First\ term\Introduction\ to\ embedded\ systems\Project\KeyPad.h

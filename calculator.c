@@ -7,14 +7,89 @@
 
 char ops[4] = {'+','-', '*', '/'};
 char nums[10] = { '1', '2',  '3','4', '5',  '6','7', '8',  '9', '0'};
-double80 termsFirst[10] = {0};
+float termsFirst[10] = {0};
 uint32 current_term = 0;
 char operators[9];
 uint32 state = 0;
 uint32 floating = 10;
 char key;
+float answer;
+int tmp=10;
 
 void calc();
+
+void reset_calc(){
+  state = 0;
+  floating = 10;
+  current_term = 0;
+  tmp=10;
+  for(int i = 0;i<10;i++){
+    termsFirst[i]=0;
+  }
+}
+
+void reArrange(int pos)
+{
+    for(int i=pos-1; i<10; i++) {
+        if(i<tmp)
+            termsFirst[i] = termsFirst[i + 1];
+        else
+            termsFirst[i] = 0;
+    }
+    for(int i=pos-1; i<9; i++) {
+        if(i<tmp)
+            operators[i-1] = operators[i ];
+        else
+            operators[i-1] = '+';
+    }
+
+    
+    tmp--;
+}
+
+long float result()
+{
+    int length = sizeof(termsFirst)/sizeof(termsFirst[0]);
+    int length2 = sizeof(operators)/sizeof(operators[0]);
+
+
+    for(int i = 0; i<9; i++) {
+        if(operators[i]=='*') {
+            termsFirst[i] = termsFirst[i] * termsFirst[i+1];
+            reArrange(i+2);
+        } else if(operators[i]=='/') {
+            termsFirst[i] = termsFirst[i] / termsFirst[i+1];
+            reArrange(i+2);
+        }
+    }
+    float total =termsFirst[0];
+    int j = 0;
+    for(int i = 1 ; i < tmp+1; i++) {
+        float t2 = termsFirst[i];
+        char op = operators[i-1];
+        switch(op) {
+        case('+'): {
+            total +=t2;
+            break;
+        }
+        case('-'): {
+            total -=t2;
+            break;
+        }
+        case('*'): {
+            total *=t2;
+            break;
+        }
+        case('/'): {
+            total /=t2;
+            break;
+        }
+        }
+        j++;
+    }
+    return total;
+}
+
 
 bool isOp(int8 key){
   for(int i = 0;i<4;i++){
@@ -32,46 +107,15 @@ bool isNum(int8 key){
 }
 
 double80 getDouble(char k){
-  return ((double)(k) - 48);
+  return ((k) - 48);
 }
 
-
-
-void result(){
-  double80 total = termsFirst[0];
-  int16 j = 0;
-  for(int i = 1 ; i < 10; i++){
-    double80 t2 = termsFirst[i];
-    char op = operators[j];;
-    switch(op){
-      case('+'):{
-        total +=t2;
-        break;
-      }
-      case('-'):{
-        total -=t2;
-        break;
-      }
-      case('*'):{
-        total *=t2;
-        break;
-      }
-      case('/'):{
-        total /=t2;
-        break;
-      }
-    }
-    j++;
-  }
-  LCD_setcursorRowCol(1,1);
-  LCD_printFloat(total);
-
-}
 
 void calc(){
-  LCD_Init();
+  //LCD_Init();
   LCD_command(CLEAR_DISPLAY);
-  keypad_Init();
+  //keypad_Init();
+  reset_calc();
 
   bool end = true;
   while(end){
@@ -81,9 +125,9 @@ void calc(){
       case(0): {
         key = get_input();
         LCD_data(key);
-        double64 tmp = getDouble(key);
         if(isNum(key)){
-          termsFirst[current_term] = (termsFirst[current_term]*10)+ (tmp);
+          termsFirst[current_term] = (termsFirst[current_term]*10)+ (key-48);
+
         }
         else if(isOp(key)){
           state = 2;
@@ -94,7 +138,10 @@ void calc(){
           state=1;
         }
         else{
-          result();
+          answer = result();
+          LCD_setcursorRowCol(1,1);
+          LCD_printFloat(answer);
+          get_input();
           end = false;
         }
         break;
@@ -105,8 +152,7 @@ void calc(){
         key = get_input();
         LCD_data(key);
         if(isNum(key)){
-          double64 tmp = getDouble(key);
-          termsFirst[current_term] = (termsFirst[current_term])+ (tmp/floating);
+          termsFirst[current_term] = (termsFirst[current_term])+ ((float)(key-48)/(float)floating);
           floating *=10;
         }
         else if(isOp(key)){
@@ -118,9 +164,13 @@ void calc(){
         else if(key == '.'){
           //error
           LCD_errormsg();
+          end = false;
         }
         else{
-          result();
+          answer = result();
+          LCD_setcursorRowCol(1,1);
+          LCD_printFloat(answer);
+          get_input();
           end = false;
         }
         break;
@@ -130,22 +180,20 @@ void calc(){
         LCD_data(key);
         if(isNum(key)){
           state = 0;
-          termsFirst[current_term] = (termsFirst[current_term]*10)+ ((double)(key) - 48);
+          termsFirst[current_term] = (termsFirst[current_term]*10)+ ((key) - 48);
         }
         else if(isOp(key)){
           //error
           LCD_errormsg();
+          end = false;
         }
         else if(key =='.'){
-          termsFirst[current_term] = (termsFirst[current_term])+(((double)(key) - 48)/floating);
+          termsFirst[current_term] = (termsFirst[current_term])+(((key) - 48)/floating);
         }
         else{
           //error
           LCD_errormsg();
+          end = false;
         }
         break;
-      }
-  }
-
-  }
-}
+      }}}}

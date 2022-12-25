@@ -2855,6 +2855,12 @@
         <name>$PROJ_DIR$\calculator.h</name>
     </file>
     <file>
+        <name>$PROJ_DIR$\config.c</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\config.h</name>
+    </file>
+    <file>
         <name>$PROJ_DIR$\DataTypes.h</name>
     </file>
     <file>
@@ -2888,13 +2894,19 @@
         <name>$PROJ_DIR$\main.c</name>
     </file>
     <file>
-        <name>$PROJ_DIR$\operations.c</name>
-    </file>
-    <file>
-        <name>$PROJ_DIR$\operations.h</name>
-    </file>
-    <file>
         <name>$PROJ_DIR$\startup_ewarm.c</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\stopwatch.c</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\stopwatch.h</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\timer.c</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\timer.h</name>
     </file>
     <file>
         <name>$PROJ_DIR$\tm4c123gh6pm.h</name>
