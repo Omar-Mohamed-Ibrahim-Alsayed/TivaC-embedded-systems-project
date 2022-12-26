@@ -47,6 +47,7 @@ void handler(void);
 void handler2(void);
 void change_mode(void);
 void toggle_pause(void);
+void toggle_reset(void);
 
 
 //*****************************************************************************
@@ -105,7 +106,7 @@ __root const uVectorEntry __vector_table[] @ ".intvec" =
     change_mode,                      // GPIO Port A
     IntDefaultHandler,                      // GPIO Port B
     IntDefaultHandler,                      // GPIO Port C
-    IntDefaultHandler,                      // GPIO Port D
+    toggle_reset,                      // GPIO Port D
     toggle_pause,                      // GPIO Port E
     IntDefaultHandler,                      // UART0 Rx and Tx
     IntDefaultHandler,                      // UART1 Rx and Tx

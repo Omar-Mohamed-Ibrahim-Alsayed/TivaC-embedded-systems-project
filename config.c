@@ -72,11 +72,20 @@ void change_mode(){
 }
 
 void toggle_pause(){
+    while((DIO_ReadPin(PORTE, 4) == 0)){
+      delay_ms(50);}
     GPIOIntClear(GPIO_PORTE_BASE, GPIO_PIN_4);
     if(pause == true)
       pause = false;
     else
       pause = true;
+    
+}
+
+void toggle_reset(){
+    GPIOIntClear(GPIO_PORTD_BASE, GPIO_PIN_2);
+    delay_ms(500);
+    reset = true;
 }
 
 void GPIOF_init(){
@@ -102,7 +111,8 @@ while(!SysCtlPeripheralReady(SYSCTL_PERIPH_GPIOA))
 	GPIOIntRegister(GPIO_PORTA_BASE, change_mode);		// Register our handler function for port F
 	GPIOIntTypeSet(GPIO_PORTA_BASE, GPIO_PIN_2,
 		GPIO_FALLING_EDGE);				// Configure PA2,3,4 for falling edge trigger
-	GPIOIntEnable(GPIO_PORTA_BASE, GPIO_PIN_2);		// Enable interrupt for PA2,3,4
+	IntPrioritySet(INT_GPIOA, 0x00);
+        GPIOIntEnable(GPIO_PORTA_BASE, GPIO_PIN_2);		// Enable interrupt for PA2,3,4
         
 // Enable the GPIOF peripheral
 //
@@ -126,5 +136,32 @@ while(!SysCtlPeripheralReady(SYSCTL_PERIPH_GPIOE))
 	GPIOIntRegister(GPIO_PORTE_BASE, toggle_pause);		// Register our handler function for port F
 	GPIOIntTypeSet(GPIO_PORTE_BASE, GPIO_PIN_4,
 		GPIO_FALLING_EDGE);				// Configure PA2,3,4 for falling edge trigger
-	GPIOIntEnable(GPIO_PORTE_BASE, GPIO_PIN_4);
+	IntPrioritySet(INT_GPIOE, 0x01);
+        GPIOIntEnable(GPIO_PORTE_BASE, GPIO_PIN_4);
+        
+// Enable the GPIOF peripheral
+//
+SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOD);
+//
+// Wait for the GPIOF module to be ready.
+//
+while(!SysCtlPeripheralReady(SYSCTL_PERIPH_GPIOD))
+{
+}
+	
+	// Pin A2 setup
+	SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOD);		// Enable port A
+	GPIOPinTypeGPIOInput(GPIO_PORTD_BASE, GPIO_PIN_2);	// Init PA2,3,4 as input
+	GPIOPadConfigSet(GPIO_PORTD_BASE, GPIO_PIN_2,
+		GPIO_STRENGTH_2MA, GPIO_PIN_TYPE_STD_WPU);	// Enable weak pullup resistor for PA2,3,4
+
+	// Interrupt setuü
+	GPIOIntDisable(GPIO_PORTD_BASE, GPIO_PIN_2);		// Disable interrupt for PA2,3,4 (in case it was enabled)
+	GPIOIntClear(GPIO_PORTD_BASE, GPIO_PIN_2);		// Clear pending interrupts for PA2,3,4
+	GPIOIntRegister(GPIO_PORTD_BASE, toggle_reset);		// Register our handler function for port F
+	GPIOIntTypeSet(GPIO_PORTD_BASE, GPIO_PIN_2,
+		GPIO_FALLING_EDGE);				// Configure PA2,3,4 for falling edge trigger
+	IntPrioritySet(INT_GPIOD, 0x02);
+        GPIOIntEnable(GPIO_PORTD_BASE, GPIO_PIN_2);
+
 }

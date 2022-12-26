@@ -23,14 +23,20 @@
 int16 TM_sec = 0;
 int16 TM_min = 0;
 char inp;
-
+void TMset();
 
 
 void handler2(void){
   LCD_command(CLEAR_DISPLAY);
   MAP_TimerIntClear(TIMER1_BASE, TIMER_TIMA_TIMEOUT);
+  LCD_command(CLEAR_DISPLAY);
+  LCD_printInt(get_pause());
+  LCD_command(CLEAR_DISPLAY);
+  LCD_printInt(get_reset());
+  if(get_pause()==false && get_reset() == false){
   if(TM_min == 0 && TM_sec == 0){
-    if(get_mode(1) == 0){
+    if(get_mode(1) == 0){     
+    LCD_command(CLEAR_DISPLAY);
     displayTime(TM_min, TM_sec);}
     LCD_setcursorRowCol(1,5);
     LCD_printString("Done");
@@ -45,7 +51,18 @@ void handler2(void){
   TM_sec = (TM_sec-1)%60;
   if(get_mode(1) == 0){
     displayTime(TM_min, TM_sec);}
+  }}
+  else if(get_reset() == true){
+  set_reset();
+  LCD_command(CLEAR_DISPLAY);
+  LCD_printString("Please enter time");
+  TMset();
+  LCD_setcursorRowCol(1,0);
+  LCD_printString("Press any key to start");
+  get_input();
   }
+    LCD_command(CLEAR_DISPLAY);
+    displayTime(TM_min, TM_sec);
 }
 
 
@@ -63,6 +80,7 @@ void periodic_timer(int32_t delay){
   TimerConfigure(TIMER1_BASE, TIMER_CFG_PERIODIC);
   TimerLoadSet(TIMER1_BASE , TIMER_A, (delay*16e3) -1);
   TimerEnable(TIMER1_BASE , TIMER_A);
+  IntPrioritySet(INT_TIMER1A, 0x04);
   TimerIntEnable(TIMER1_BASE, TIMER_TIMA_TIMEOUT);
   TimerIntRegister(TIMER1_BASE, TIMER_A, handler2);
   IntMasterEnable();
@@ -76,6 +94,7 @@ void TMreset(){
 }
 
 void TMset(){
+  TMreset();
   //get minutes
   inp = get_input();
   while(((int)(inp) - 48)>=6){

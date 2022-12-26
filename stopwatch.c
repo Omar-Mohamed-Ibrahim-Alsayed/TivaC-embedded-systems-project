@@ -32,7 +32,7 @@ void SWreset(){
 
 void handler(void){
   MAP_TimerIntClear(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
-  if(get_pause()==false){
+  if(get_pause()==false && get_reset() == false){
   if((SW_sec+1)%60 == 0 ){
    if(get_mode(0) == 0){
     LCD_command(CLEAR_DISPLAY);
@@ -44,7 +44,13 @@ void handler(void){
   LCD_command(CLEAR_DISPLAY);
       displayTime(SW_min, SW_sec);}
     SW_sec = (SW_sec+1)%60;
-  }}
+  }}else if(get_reset() == true){
+    SW_sec =0;
+    SW_min =0;
+    set_reset();
+    LCD_command(CLEAR_DISPLAY);
+      displayTime(SW_min, SW_sec);
+  }
 }
 
 void periodic_SW(int32_t delay){
@@ -58,6 +64,7 @@ void periodic_SW(int32_t delay){
   TimerConfigure(TIMER0_BASE, TIMER_CFG_PERIODIC);
   TimerLoadSet(TIMER0_BASE , TIMER_A, (delay*16e3) -1);
   TimerEnable(TIMER0_BASE , TIMER_A);
+  IntPrioritySet(INT_TIMER0A, 0x03);
   TimerIntEnable(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
   TimerIntRegister(TIMER0_BASE, TIMER_A, handler);
   IntMasterEnable();
