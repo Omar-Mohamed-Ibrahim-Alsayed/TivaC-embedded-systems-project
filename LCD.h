@@ -8,7 +8,7 @@
 #include "delay.h"
 #define  time  500
 
-void LCD_Init              (void);
+
 void LCD_command           (unsigned int);
 void LCD_data              (unsigned char);
 void LCD_printInt          (int);

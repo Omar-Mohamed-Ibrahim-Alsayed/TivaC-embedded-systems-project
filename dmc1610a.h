@@ -1,14 +1,7 @@
-/**************************************************
-*  @file     dmc1610a.h
-*
-*  @author   Group Alpha
-*
-*  @date     4/12/2018 2:50 PM
-*
-**************************************************/
 #ifndef __DMC1610A_H__
 #define __DMC1610A_H__
 
+//commands for the LCD
 #define  RS                       ((unsigned int)(1U << 4) 
 #define  RW                       ((unsigned int)(1U << 5)
 #define  EN                       ((unsigned char)(1U << 6)

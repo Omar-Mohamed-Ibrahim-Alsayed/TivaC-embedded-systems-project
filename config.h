@@ -15,3 +15,7 @@ void reset_mode(int16 m);
 
 void GPIOF_init();
 
+void keypad_Init(void);
+
+void LCD_Init(void);
+

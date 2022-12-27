@@ -5,95 +5,119 @@
     <configuration>
         <name>Debug</name>
         <outputs>
-            <file>$PROJ_DIR$\Debug\Obj\calculator.o</file>
-            <file>$TOOLKIT_DIR$\inc\c\stdlib.h</file>
-            <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
-            <file>$PROJ_DIR$\Debug\Obj\KeyPad.o</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\ti\TivaWare_C_Series-2.2.0.295\driverlib\ewarm\Exe\driverlib.a</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\ti\TivaWare_C_Series-2.2.0.295\inc\hw_gpio.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\string.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\operations.o</file>
-            <file>$PROJ_DIR$\LiquidCrystal.cpp</file>
-            <file>$TOOLKIT_DIR$\lib\m7M_tls.a</file>
-            <file>$PROJ_DIR$\Debug\Exe\calc.out</file>
-            <file>$PROJ_DIR$\Debug\Obj\main.o</file>
-            <file>$PROJ_DIR$\Debug\Obj\Delay.o</file>
-            <file>$PROJ_DIR$\LiquidCrystal.c</file>
-            <file>$PROJ_DIR$\Print.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\startup_ewarm.o</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\ti\TivaWare_C_Series-2.2.0.295\driverlib\gpio.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\ti\TivaWare_C_Series-2.2.0.295\inc\hw_memmap.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\ti\TivaWare_C_Series-2.2.0.295\driverlib\interrupt.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\LCD.o</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\ti\TivaWare_C_Series-2.2.0.295\inc\hw_nvic.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\inttypes.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\ti\TivaWare_C_Series-2.2.0.295\driverlib\rom.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\DLib_Product_stdlib.h</file>
             <file>$TOOLKIT_DIR$\inc\c\stdbool.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
-            <file>$TOOLKIT_DIR$\config\linker\TexasInstruments\TM4C123GH6.icf</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\ti\TivaWare_C_Series-2.2.0.295\driverlib\rom_map.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\ti\TivaWare_C_Series-2.2.0.295\inc\hw_types.h</file>
             <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
-            <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\ti\TivaWare_C_Series-2.2.0.295\driverlib\timer.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\ti\TivaWare_C_Series-2.2.0.295\driverlib\rom.h</file>
+            <file>$PROJ_DIR$\LiquidCrystal.c</file>
             <file>$PROJ_DIR$\LiquidCrystal.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\timer.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\config.o</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\ti\TivaWare_C_Series-2.2.0.295\driverlib\interrupt.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product_string.h</file>
+            <file>$TOOLKIT_DIR$\config\linker\TexasInstruments\TM4C123GH6.icf</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+            <file>$TOOLKIT_DIR$\lib\m7M_tls.a</file>
+            <file>$PROJ_DIR$\Debug\List\calc.map</file>
+            <file>$PROJ_DIR$\operations.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\ti\TivaWare_C_Series-2.2.0.295\driverlib\systick.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\ti\TivaWare_C_Series-2.2.0.295\inc\hw_memmap.h</file>
+            <file>$PROJ_DIR$\LiquidCrystal.cpp</file>
+            <file>$PROJ_DIR$\Debug\Obj\startup_ewarm.o</file>
+            <file>$PROJ_DIR$\Debug\Exe\calc.out</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product_stdlib.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\Delay.o</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\ti\TivaWare_C_Series-2.2.0.295\driverlib\rom_map.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\ti\TivaWare_C_Series-2.2.0.295\driverlib\timer.h</file>
+            <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
+            <file>$PROJ_DIR$\Debug\Obj\LCD.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
             <file>$PROJ_DIR$\..\..\..\..\..\ti\TivaWare_C_Series-2.2.0.295\driverlib\sysctl.h</file>
-            <file>$PROJ_DIR$\DIO.c</file>
-            <file>$PROJ_DIR$\DIO.h</file>
-            <file>$PROJ_DIR$\dmc1610a.h</file>
-            <file>$PROJ_DIR$\KeyPad.c</file>
-            <file>$PROJ_DIR$\KeyPad.h</file>
-            <file>$PROJ_DIR$\config.h</file>
-            <file>$PROJ_DIR$\calculator.c</file>
-            <file>$PROJ_DIR$\bitwise_operation.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\inttypes.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\ti\TivaWare_C_Series-2.2.0.295\inc\hw_types.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\DIO.o</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\ti\TivaWare_C_Series-2.2.0.295\inc\hw_nvic.h</file>
+            <file>$PROJ_DIR$\operations.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\ti\TivaWare_C_Series-2.2.0.295\driverlib\pin_map.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\stopwatch.o</file>
             <file>$PROJ_DIR$\calculator.h</file>
             <file>$PROJ_DIR$\config.c</file>
-            <file>$PROJ_DIR$\DataTypes.h</file>
             <file>$PROJ_DIR$\Delay.c</file>
+            <file>$PROJ_DIR$\DIO.c</file>
+            <file>$PROJ_DIR$\DIO.h</file>
+            <file>$PROJ_DIR$\KeyPad.c</file>
+            <file>$PROJ_DIR$\DataTypes.h</file>
+            <file>$PROJ_DIR$\bitwise_operation.h</file>
+            <file>$PROJ_DIR$\calculator.c</file>
+            <file>$PROJ_DIR$\config.h</file>
             <file>$PROJ_DIR$\Delay.h</file>
-            <file>$PROJ_DIR$\stopwatch.c</file>
-            <file>$PROJ_DIR$\timer.h</file>
+            <file>$PROJ_DIR$\dmc1610a.h</file>
+            <file>$PROJ_DIR$\startup_ewarm.c</file>
             <file>$PROJ_DIR$\stopwatch.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\DIO.o</file>
-            <file>$TOOLKIT_DIR$\inc\c\DLib_Product_string.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\timer.o</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\ti\TivaWare_C_Series-2.2.0.295\driverlib\systick.h</file>
+            <file>$PROJ_DIR$\stopwatch.c</file>
             <file>$PROJ_DIR$\timer.c</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\ti\TivaWare_C_Series-2.2.0.295\driverlib\pin_map.h</file>
+            <file>$PROJ_DIR$\LCD.c</file>
+            <file>$PROJ_DIR$\timer.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\operations.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\calculator.o</file>
+            <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
+            <file>$PROJ_DIR$\Debug\Obj\KeyPad.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdlib.h</file>
+            <file>$PROJ_DIR$\tm4c123gh6pm.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\ti\TivaWare_C_Series-2.2.0.295\driverlib\ewarm\Exe\driverlib.a</file>
+            <file>$TOOLKIT_DIR$\inc\c\string.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\ti\TivaWare_C_Series-2.2.0.295\inc\hw_gpio.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\ti\TivaWare_C_Series-2.2.0.295\driverlib\gpio.h</file>
+            <file>$PROJ_DIR$\Print.h</file>
+            <file>$PROJ_DIR$\KeyPad.h</file>
             <file>$PROJ_DIR$\LCD.h</file>
             <file>$PROJ_DIR$\main.c</file>
-            <file>$PROJ_DIR$\startup_ewarm.c</file>
-            <file>$PROJ_DIR$\tm4c123gh6pm.h</file>
-            <file>$PROJ_DIR$\operations.h</file>
-            <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
-            <file>$PROJ_DIR$\Debug\Obj\config.o</file>
-            <file>$PROJ_DIR$\LCD.c</file>
-            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
-            <file>$PROJ_DIR$\operations.c</file>
-            <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\stopwatch.o</file>
-            <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
-            <file>$PROJ_DIR$\Debug\List\calc.map</file>
         </outputs>
         <file>
             <name>[ROOT_NODE]</name>
             <outputs>
                 <tool>
                     <name>ILINK</name>
-                    <file> 10 72</file>
+                    <file> 20 14</file>
                 </tool>
             </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\LiquidCrystal.c</name>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 4 29 34 12 39 27 6 35 69 5 38</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\operations.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 59</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 47 33</file>
+                </tool>
+            </inputs>
         </file>
         <file>
             <name>$PROJ_DIR$\LiquidCrystal.cpp</name>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 35 23 69 28 22 17 71 67 24 33 6 54</file>
+                    <file> 4 29 34 12 39 27 6 35 5 38 66 10</file>
                 </tool>
             </inputs>
         </file>
@@ -102,67 +126,13 @@
             <outputs>
                 <tool>
                     <name>ILINK</name>
-                    <file> 72</file>
+                    <file> 14</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ILINK</name>
-                    <file> 29 0 65 12 53 3 20 11 15 70 55 4 32 2 9 64</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\LiquidCrystal.c</name>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 35 23 69 28 22 17 71 67 14 24 33</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\DIO.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 53</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 47 38 62 44</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\KeyPad.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 3</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 38 62 44 47 59 24 69 22 17 71 67 33 1 26 39 49</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\calculator.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 0</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 41 47 27 59 24 69 22 17 71 67 33 1 26 62 39 49 6 54</file>
+                    <file> 11 60 8 22 31 62 26 37 19 40 7 65 1 61 13 25</file>
                 </tool>
             </inputs>
         </file>
@@ -171,13 +141,13 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 65</file>
+                    <file> 8</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 63 47 28 69 22 17 71 67 27 62 31 36 16 18 56 19 5 58 25 30 34 38 44 59 24 33 1 26 39 49 41</file>
+                    <file> 33 47 12 34 39 27 6 35 0 64 30 28 68 17 16 9 67 36 2 23 24 45 48 71 5 38 63 21 52 51 70</file>
                 </tool>
             </inputs>
         </file>
@@ -186,58 +156,58 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 12</file>
+                    <file> 22</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 49</file>
+                    <file> 51</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\stopwatch.c</name>
+            <name>$PROJ_DIR$\DIO.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 70</file>
+                    <file> 31</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 63 47 28 69 22 17 71 67 27 62 31 36 16 18 56 19 5 58 25 30 34 38 44 59 24 33 1 26 39 49 41</file>
+                    <file> 47 45 64 48</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\timer.c</name>
+            <name>$PROJ_DIR$\KeyPad.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 55</file>
+                    <file> 62</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 63 47 28 69 22 17 71 67 27 62 31 36 16 18 56 19 5 58 25 30 34 38 44 59 24 33 1 26 39 49 41</file>
+                    <file> 45 64 48 47 71 5 34 39 27 6 35 38 63 21 52 51</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\main.c</name>
+            <name>$PROJ_DIR$\calculator.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 11</file>
+                    <file> 60</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 63 47 28 69 22 17 71 67 27 62 31 36 16 18 56 19 5 58 25 30 34 38 44 59 24 33 1 26 39 49 41 45 52 51 42</file>
+                    <file> 70 47 0 71 5 34 39 27 6 35 38 63 21 64 52 51 66 10</file>
                 </tool>
             </inputs>
         </file>
@@ -246,33 +216,33 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 15</file>
+                    <file> 19</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 28 69 22 17 71 67 21 31</file>
+                    <file> 12 34 39 27 6 35 32 30</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\LCD.c</name>
+            <name>$PROJ_DIR$\stopwatch.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 20</file>
+                    <file> 40</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 59 24 69 22 17 71 67 33 1 26 62 39 49</file>
+                    <file> 33 47 12 34 39 27 6 35 0 64 30 28 68 17 16 9 67 36 2 23 24 45 48 71 5 38 63 21 52 51 70</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\operations.c</name>
+            <name>$PROJ_DIR$\timer.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
@@ -282,13 +252,43 @@
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 47 63</file>
+                    <file> 33 47 12 34 39 27 6 35 0 64 30 28 68 17 16 9 67 36 2 23 24 45 48 71 5 38 63 21 52 51 70</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\LCD.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 26</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 71 5 34 39 27 6 35 38 63 21 64 52 51</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\main.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 37</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 33 47 12 34 39 27 6 35 0 64 30 28 68 17 16 9 67 36 2 23 24 45 48 71 5 38 63 21 52 51 70 41 54 58 50</file>
                 </tool>
             </inputs>
         </file>
         <forcedrebuild>
-            <name>[MULTI_TOOL]</name>
-            <tool>ILINK</tool>
+            <name>$PROJ_DIR$\operations.c</name>
+            <tool>ICCARM</tool>
         </forcedrebuild>
         <forcedrebuild>
             <name>$PROJ_DIR$\DIO.c</name>
@@ -299,8 +299,8 @@
             <tool>ICCARM</tool>
         </forcedrebuild>
         <forcedrebuild>
-            <name>$PROJ_DIR$\operations.c</name>
-            <tool>ICCARM</tool>
+            <name>[MULTI_TOOL]</name>
+            <tool>ILINK</tool>
         </forcedrebuild>
         <forcedrebuild>
             <name>[REBUILD_ALL]</name>
